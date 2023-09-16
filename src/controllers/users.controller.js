@@ -1,11 +1,13 @@
 
-const { getUsers, getUserById } = require( '../models/users.model' );
+const { ObjectId } = require( 'mongodb' );
+
+const mongodb = require( '../database/database' );
 
 const getAll = async ( req, res, next ) => {
 
   try {
 
-    const users = await getUsers();
+    const users = await mongodb.getDb().collection( 'users' ).find( {} ).toArray();
 
     res.setHeader( 'Content-Type', 'application/json' );
     
@@ -27,7 +29,7 @@ const getSingle = async ( req, res, next ) => {
 
   try {
 
-    const user = await getUserById( id );
+    const user = await mongodb.getDb().collection( 'users' ).findOne( { _id : new ObjectId( id ) } );
 
     res.setHeader( 'Content-Type', 'application/json' );
     
