@@ -9,8 +9,4 @@ router.get( '/', getAll );
 
 router.get( '/:id', getSingle );
 
-module.exports = {
-
-  router
-
-}
+module.exports = router;
