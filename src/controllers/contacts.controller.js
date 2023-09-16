@@ -7,15 +7,15 @@ const getAll = async ( req, res, next ) => {
 
   try {
 
-    const users = await mongodb.getDb().collection( 'users' ).find( {} ).toArray();
+    const contacts = await mongodb.getDb().collection( 'contacts' ).find( {} ).toArray();
 
     res.setHeader( 'Content-Type', 'application/json' );
     
-    res.status( 200 ).json( users );
+    res.status( 200 ).json( contacts );
 
   } catch ( error ) {
     
-    console.error( `Error while getting the list of users`, err.message );
+    console.error( `Error while getting the list of contacts`, err.message );
 
     next( err );
 
@@ -29,11 +29,11 @@ const getSingle = async ( req, res, next ) => {
 
   try {
 
-    const user = await mongodb.getDb().collection( 'users' ).findOne( { _id : new ObjectId( id ) } );
+    const contact = await mongodb.getDb().collection( 'contacts' ).findOne( { _id : new ObjectId( id ) } );
 
     res.setHeader( 'Content-Type', 'application/json' );
     
-    res.status( 200 ).json( user );
+    res.status( 200 ).json( contact );
 
   } catch (error) {
     

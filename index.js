@@ -7,7 +7,7 @@ const config = require( './src/config/index' );
 
 const mongodb = require( './src/database/database' );
 
-const { router: usersRouter } = require( './src/routes/users.route' );
+const { router: contactsRouter } = require( './src/routes/contacts.route' );
 
 
 const app = express();
@@ -32,7 +32,7 @@ app.use( bodyParser.json() );
 
 // app.get( '/', ( req, res, next ) => res.json( { message: 'ok' } ) );
 
-app.use( '/users', usersRouter );
+app.use( '/contacts', contactsRouter );
 
 mongodb.initDb( ( err, mongodb ) => {
 

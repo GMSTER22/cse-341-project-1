@@ -1,0 +1,6 @@
+
+# Get all the contacts
+GET https://cse-341-project-1-u0l2.onrender.com/contacts HTTP/1.1
+
+# Get contact by id
+GET https://cse-341-project-1-u0l2.onrender.com/contacts/6505fa52687d4bbbb31673ee HTTP/1.1
