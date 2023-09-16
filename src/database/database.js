@@ -42,7 +42,7 @@ const initDb = async ( callback ) => {
 
 }
 
-const getDb = ( databaseName = 'test' ) => {
+const getDb = ( databaseName = 'cse-341-project-1' ) => {
 
   if ( ! connection ) throw Error( 'db not established with mongodb' );
 

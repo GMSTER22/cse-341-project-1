@@ -5,9 +5,9 @@ const bodyParser = require( 'body-parser' );
 
 const config = require( './src/config/index' );
 
-const mongodb = require( './src/database/connection' );
+const mongodb = require( './src/database/database' );
 
-const { router: contactsRouter } = require( './src/routes/contacts.route' );
+const { router: usersRouter } = require( './src/routes/users.route' );
 
 
 const app = express();
@@ -30,14 +30,20 @@ app.use( bodyParser.urlencoded( { extended: false } ) );
 
 app.use( bodyParser.json() );
 
-app.get( '/', ( req, res, next ) => res.json( { message: 'ok' } ) );
+// app.get( '/', ( req, res, next ) => res.json( { message: 'ok' } ) );
 
-app.use( '/contacts', contactsRouter );
+app.use( '/users', usersRouter );
 
 mongodb.initDb( ( err, mongodb ) => {
 
-  if ( err ) console.log( err );
+  if ( err ) {
 
-  else app.listen( PORT, () => console.log( 'server listening on port ' + PORT ) );
+    console.log( err );
+
+  } else {
+
+    app.listen( PORT, () => console.log( 'server listening on port ' + PORT ) );
+
+  }
 
 } );
