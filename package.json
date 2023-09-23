@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "watch": "nodemon index.js"
+    "watch": "nodemon index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .js .",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "swagger-autogen": "node swagger.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +24,13 @@
   },
   "devDependencies": {
     "dotenv": "^16.3.1",
-    "nodemon": "^3.0.1"
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "swagger-autogen": "^2.23.6",
+    "swagger-ui-express": "^5.0.0"
   }
 }

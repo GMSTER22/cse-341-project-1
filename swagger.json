@@ -1,0 +1,173 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Contacts API",
+    "description": "Contacts API allowing CRUD operations to interact with the contacts.",
+    "version": "1.0.0"
+  },
+  "host": "https://cse-341-project-1-u0l2.onrender.com",
+  "basePath": "/",
+  "schemes": ["https"],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["contacts"],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/contacts/": {
+      "get": {
+        "tags": ["contacts"],
+        "description": "Endpoint to get all contacts",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["contacts"],
+        "description": "Endpoint to create a new contact",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Add a contact",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstname": {
+                  "type": "string",
+                  "example": "John"
+                },
+                "lastname": {
+                  "type": "string",
+                  "example": "Doe"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "john.doe@example.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "Blue"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "2000-01-31"
+                }
+              },
+              "required": ["firstname", "lastname", "email", "favoriteColor", "birthday"]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "tags": ["contacts"],
+        "description": "Endpoint to get a specific contact",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": ["contacts"],
+        "description": "Endpoint to update a contact",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Add a contact",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstname": {
+                  "type": "string",
+                  "example": ""
+                },
+                "lastname": {
+                  "type": "string",
+                  "example": ""
+                },
+                "email": {
+                  "type": "string",
+                  "example": ""
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": ""
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "2000-01-31"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["contacts"],
+        "description": "Endpoint to delete a contact",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
