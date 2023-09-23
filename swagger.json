@@ -7,7 +7,7 @@
   },
   "host": "https://cse-341-project-1-u0l2.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": ["http", "https"],
   "paths": {
     "/": {
       "get": {
