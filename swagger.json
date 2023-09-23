@@ -5,9 +5,9 @@
     "description": "Contacts API allowing CRUD operations to interact with the contacts.",
     "version": "1.0.0"
   },
-  "host": "https://cse-341-project-1-u0l2.onrender.com",
+  "host": "cse-341-project-1-u0l2.onrender.com",
   "basePath": "/",
-  "schemes": ["http", "https"],
+  "schemes": ["https"],
   "paths": {
     "/": {
       "get": {

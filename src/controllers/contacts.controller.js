@@ -3,7 +3,7 @@ const { ObjectId } = require('mongodb');
 const mongodb = require('../database/database');
 
 const getAll = async (req, res, next) => {
-  // #swagger.tags=['contacts']
+  // #swagger.tags=['Contacts']
   // #swagger.description = 'Endpoint to get all contacts'
   try {
     const contacts = await mongodb.getDb().collection('contacts').find({}).toArray();
@@ -19,7 +19,7 @@ const getAll = async (req, res, next) => {
 };
 
 const getSingle = async (req, res, next) => {
-  // #swagger.tags=['contacts']
+  // #swagger.tags=['Contacts']
   // #swagger.description = 'Endpoint to get a specific contact'
   const { id } = req.params;
 
@@ -40,7 +40,7 @@ const getSingle = async (req, res, next) => {
 };
 
 const createContact = async (req, res, next) => {
-  // #swagger.tags=['contacts']
+  // #swagger.tags=['Contacts']
   // #swagger.description = 'Endpoint to create a new contact'
   /*  
   #swagger.parameters['obj'] = {
@@ -76,7 +76,7 @@ const createContact = async (req, res, next) => {
 };
 
 const updateContact = async (req, res, next) => {
-  // #swagger.tags=['contacts']
+  // #swagger.tags=['Contacts']
   // #swagger.description = 'Endpoint to update a contact'
   /*  
   #swagger.parameters['obj'] = {
@@ -117,7 +117,7 @@ const updateContact = async (req, res, next) => {
 };
 
 const deleteContact = async (req, res, next) => {
-  // #swagger.tags=['contacts']
+  // #swagger.tags=['Contacts']
   // #swagger.description = 'Endpoint to delete a contact'
   const { id } = req.params;
 
