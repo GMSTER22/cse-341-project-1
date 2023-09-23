@@ -9,7 +9,7 @@ const router = express.Router();
 router.use('/', swaggerDocRouter);
 
 router.get('/', (req, res) => {
-  // #swagger.tags=['contacts']
+  // #swagger.tags=['Hello World']
   res.send('Hello World');
 });
 
